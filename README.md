@@ -1,164 +1,203 @@
-# Phase 4 Project
+# Phase 4 Project Description
 
-Final phase down -- you're absolutely crushing it! You've made it all the way through one of the toughest phase of this course. You must have an amazing brain in your head!
+Final phase down -- you're absolutely crushing it! You've made it all the way through one of the toughest phases of this course. You must have an amazing brain in your head!
 
-<img src='https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-4-project/main/images/brain.gif'>
+<img src='https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-4-project-v2-3/main/images/brain.gif'>
+
+You have one last project to complete before the Capstone!
+
+In this project description, we will cover:
+
+* Project Overview
+* Deliverables
+* Grading
+* Getting Started
 
 ## Project Overview
 
-For this phase, you will choose a project that requires building one of these four models:
+For this project, you will engage in an **advanced supervised modeling process** from start to finish, solving either a classification or a regression problem using an advanced dataset.
+
+### Business Problem and Data
+
+Similar to the Phase 3 project, you are responsible for choosing a dataset as well as defining a stakeholder and business problem. In addition to these choices, you can choose between any of the four advanced supervised modeling techniques covered in Phase 4:
 
 - Time Series Modeling
 - Recommendation System
 - Image Classification with Deep Learning
 - Natural Language Processing
 
-### The Data
+For complete details, see [Phase 4 Project - Choosing a Dataset](https://github.com/learn-co-curriculum/dsc-phase-4-choosing-a-dataset).
 
-We have provided a dataset suitable to each model, but you are also encouraged to source your own dataset. If you choose your own dataset, **run the dataset and business problem by your instructor for approval** before starting your project.
+### Key Points
 
-### How to Choose a Project
+### Advanced Data Types and Modeling
 
-When choosing a project, consider:
+The purpose of this project is to demonstrate that you have mastered the basics of some type of modeling technique beyond the techniques introduced in Phase 3. This is your change to tailor your work to a **data science audience** in particular, with a clear notebook narrative that illustrates your process. The resulting presentation slides will be substantially similar to a Phase 3 presentation, but someone reading your notebook should be able to see your grasp of the specific advanced modeling technique.
 
-1. **Depth:** Choose a project that similar to what you want to do for your capstone project (Phase 5). This will allow you to practice those methods in a group setting before needing to use it independently. This will help you build a better Capstone project and a portfolio that demonstrates the ability to deeply learn and implement one modeling approach.
+### Validation Strategy
 
-2. **Breadth:** Choose a problem that you don't necessarily plan to use in your capstone project. This will allow you to develop applied experience with multiple modeling approaches. This will help you refine your areas of interest and build a portfolio that demonstrates the ability to learn and implement multiple modeling approaches.
+A **validation strategy** means a strategy to demonstrate that your model will actually perform well on unseen data. In Phase 3 this was relatively straightforward to accomplish with the `train_test_split` function from scikit-learn. This may or may not be appropriate for the project you select. Make sure that you are thinking about this strategy from the start and incorporating it into your notebook narrative.
 
-If you are feeling overwhelmed or behind, we recommend you choose Problem \#3: Image Classification with Deep Learning.
+### Choosing a Dataset
 
-### Problem 1: Time Series Modeling
-
-If you choose the Time Series option, you will be forecasting real estate prices of various zip codes using data from [Zillow Research](https://www.zillow.com/research/data/). For this project, you will be acting as a consultant for a fictional real-estate investment firm. The firm has asked you what seems like a simple question:
-
-> What are the top 5 best zip codes for us to invest in?
-
-This may seem like a simple question at first glance, but there's more than a little ambiguity here that you'll have to think through in order to provide a solid recommendation. Should your recommendation be focused on profit margins only? What about risk? What sort of time horizon are you predicting against?  Your recommendation will need to detail your rationale and answer any sort of lingering questions like these in order to demonstrate how you define "best".
-
-There are many datasets on the [Zillow Research Page](https://www.zillow.com/research/data/), and making sure you have exactly what you need can be a bit confusing. For simplicity's sake, we have already provided the dataset for you in this repo -- you will find it in the file `time-series/zillow_data.csv`.
-
-The goal of this project is to have you complete a very common real-world task in regard to time series modeling. However, real world problems often come with a significant degree of ambiguity, which requires you to use your knowledge of statistics and data science to think critically about and answer. While the main task in this project is time series modeling, that isn't the overall goal -- it is important to understand that time series modeling is a tool in your toolbox, and the forecasts it provides you are what you'll use to answer important questions.
-
-In short, to pass this project, demonstrating the quality and thoughtfulness of your overall recommendation is at least as important as successfully building a time series model!
-
-#### Starter Jupyter Notebook
-
-For this project, you will be provided with a Jupyter notebook, `time-series/starter_notebook.ipynb`, containing some starter code. If you inspect the Zillow dataset file, you'll notice that the datetimes for each sale are the actual column names -- this is a format you probably haven't seen before. To ensure that you're not blocked by preprocessing, we've provided some helper functions to help simplify getting the data into the correct format. You're not required to use this notebook or keep it in its current format, but we strongly recommend you consider making use of the helper functions so you can spend your time working on the parts of the project that matter.
-
-#### Evaluation
-
-In addition to deciding which quantitative metric(s) you want to target (e.g. minimizing mean squared error), you need to start with a definition of "best investment".  Consider additional metrics like risk vs. profitability, or ROI yield.
-
-### Problem 2: Recommendation System
-
-If you choose the Recommendation System option, you will be making movie recommendations based on the [MovieLens](https://grouplens.org/datasets/movielens/latest/) dataset from the GroupLens research lab at the University of Minnesota.  Unless you are planning to run your analysis on a paid cloud platform, we recommend that you use the "small" dataset containing 100,000 user ratings (and potentially, only a particular subset of that dataset).
-
-Your task is to:
-
-> Build a model that provides top 5 movie recommendations to a user, based on their ratings of other movies.
-
-The MovieLens dataset is a "classic" recommendation system dataset, that is used in numerous academic papers and machine learning proofs-of-concept.  You will need to create the specific details about how the user will provide their ratings of other movies, in addition to formulating a more specific business problem within the general context of "recommending movies".
-
-#### Collaborative Filtering
-
-At minimum, your recommendation system must use collaborative filtering.  If you have time, consider implementing a hybrid approach, e.g. using collaborative filtering as the primary mechanism, but using content-based filtering to address the [cold start problem](https://en.wikipedia.org/wiki/Cold_start_(computing)).
-
-#### Evaluation
-
-The MovieLens dataset has explicit ratings, so achieving some sort of evaluation of your model is simple enough.  But you should give some thought to the question of metrics. Since the rankings are ordinal, we know we can treat this like a regression problem.  But when it comes to regression metrics there are several choices: RMSE, MAE, etc.  [Here](http://fastml.com/evaluating-recommender-systems/) are some further ideas.
-
-### Problem 3: Image Classification with Deep Learning
-
-If you choose this option, you'll put everything you've learned together to build a deep neural network that trains on a large dataset for classification on a non-trivial task.  In this case, using x-ray images of pediatric patients to identify whether or not they have pneumonia.  The dataset comes from Kermany et al. on [Mendeley](https://data.mendeley.com/datasets/rscbjbr9sj/3), although there is also a version on [Kaggle](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia) that may be easier to use.
-
-Your task is to:
-
-> Build a model that can classify whether a given patient has pneumonia, given a chest x-ray image.
-
-#### Aim for a Proof of Concept
-
-With Deep Learning, data is king -- the more of it, the better. However, the goal of this project isn't to build the best model possible -- it's to demonstrate your understanding by building a model that works. You should try to avoid datasets and model architectures that won't run in reasonable time on your own machine. For many problems, this means downsampling your dataset and only training on a portion of it. Once you're absolutely sure that you've found the best possible architecture and other hyperparameters for your model, then consider training your model on your entire dataset overnight (or, as larger portion of the dataset that will still run in a feasible amount of time).
-
-At the end of the day, we want to see your thought process as you iterate and improve on a model. A project that achieves a lower level of accuracy but has clearly iterated on the model and the problem until it found the best possible approach is more impressive than a model with high accuracy that did no iteration. We're not just interested in seeing you finish a model -- we want to see that you understand it, and can use this knowledge to try and make it even better!
-
-#### Evaluation
-
-Evaluation is fairly straightforward for this project.  But you'll still need to think about which metric to use and about how best to cross-validate your results.
-
-### Problem 4: Natural Language Processing (NLP)
-
-If you choose this option, you'll build an NLP model to analyze Twitter sentiment about Apple and Google products. The dataset comes from CrowdFlower via [data.world](https://data.world/crowdflower/brands-and-product-emotions). Human raters rated the sentiment in over 9,000 Tweets as positive, negative, or neither.
-
-Your task is to:
-
-> Build a model that can rate the sentiment of a Tweet based on its content.
-
-#### Aim for a Proof of Concept
-
-There are many approaches to NLP problems - start with something simple and iterate from there. For example, you could start by limiting your analysis to positive and negative Tweets only, allowing you to build a binary classifier. Then you could add in the neutral Tweets to build out a multiclass classifier. You may also consider using some of the more advanced NLP methods in the Mod 4 Appendix.
-
-#### Evaluation
-
-Evaluating multiclass classifiers can be trickier than binary classifiers because there are multiple ways to mis-classify an observation, and some errors are more problematic than others. Use the business problem that your NLP project sets out to solve to inform your choice of evaluation metrics.
-
-### Sourcing Your Own Data
-
-Sourcing new data is a valuable skill for data scientists, but it requires a great deal of care. An inappropriate dataset or an unclear business problem can lead you spend a lot of time on a project that delivers underwhelming results. The guidelines below will help you complete a project that demonstrates your ability to engage in the full data science process.
-
-Your dataset must be...
-
-1. **Appropriate for one of this project's models.** These are time series, recommendation systems, deep learning, or natural language processing.   
-
-2. **Usable to solve a specific business problem.** This solution must rely on your model.
-
-3. **Somewhat complex.** It should contain thousands of rows and features that require creativity to use.
-
-4. **Unfamiliar.** It can't be one we've already worked with during the course or that is commonly used for demonstration purposes (e.g. MNIST).
-
-5. **Manageable.** Stick to datasets that you can model using the techniques introduced in Phase 4.
-
-Once you've sourced your own dataset and identified the business problem you want to solve with it, you must to **run them by your instructor for approval**.
-
-#### Problem First, or Data First?
-
-There are two ways that you can source your own dataset: **_Problem First_** or **_Data First_**. The less time you have to complete the project, the more strongly we recommend a Data First approach to this project.
-
-**_Problem First_**: Start with a problem that you are interested in that you could potentially solve using one of the four project models. Then look for data that you could use to solve that problem. This approach is high-risk, high-reward: Very rewarding if you are able to solve a problem you are invested in, but frustrating if you end up sinking lots of time in without finding appropriate data. To mitigate the risk, set a firm limit for the amount of time you will allow yourself to look for data before moving on to the Data First approach.
-
-**_Data First_**: Take a look at some of the most popular internet repositories of cool data sets we've listed below. If you find a data set that's particularly interesting for you, then it's totally okay to build your problem around that data set.
-
-There are plenty of amazing places that you can get your data from. We recommend you start looking at data sets in some of these resources first:
-
-* [UCI Machine Learning Datasets Repository](https://archive.ics.uci.edu/ml/datasets.php)
-* [Kaggle Datasets](https://www.kaggle.com/datasets)
-* [Awesome Datasets Repo on Github](https://github.com/awesomedata/awesome-public-datasets)
-* [Tensorflow Datasets](https://www.tensorflow.org/datasets/catalog/overview)
+We've given you a lot of choices - don't get stuck spending too much time choosing which project to do. Give yourself a firm time limit for picking a project (e.g. 2 hours) so you can get on with making something great. Don't worry about picking the perfect project - remember that you will get to do a new, larger Capstone project very soon!
 
 ## The Deliverables
 
 There are three deliverables for this project:
 
-* A **GitHub repository**
-* A **Jupyter Notebook**
 * A **non-technical presentation**
+* A **Jupyter Notebook**
+* A **GitHub repository**
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic for instructions on creating and submitting your deliverables. Refer to the rubric associated with this assignment for specifications describing high-quality deliverables.
+The checklist of requirements is the same for Phase 4 as it was in Phase 3. This will also be the checklist for Capstone!
 
-### Key Points
+### Non-Technical Presentation
 
-* **Choose your project quickly.** We've given you a lot of choices - don't get stuck spending too much time choosing which project to do. Give yourself a firm time limit for picking a project (e.g. 2 hours) so you can get on with making something great. Don't worry about picking the perfect project - remember that you will get to do a new, larger Capstone project very soon!
+The non-technical presentation should be very similar to the presentation you gave in Phase 3. You can feel free to mention the specific models and metrics you used, but make sure you translate everything for an audience who is not familiar with data science.
 
-* **Your Jupyter Notebook should demonstrate an iterative approach to modeling.** This means that you begin with a basic model, evaluate it, and then provide justification for and proceed to a new model. This is a great way to add narrative structure to your notebook, especially if you compare model performance across each iteration.
+### Jupyter Notebook
 
-* **You must choose and implement an appropriate validation strategy.** This is one of the trickiest parts of machine learning models, especially for models that don't lend themselves easily to traditional cross-validation (e.g. time series & recommendation systems).
+The notebook will have the same checklist elements as in Phase 3. However, **this time around the Communication rubric element will focus on the technical notebook**. A data science professional reading your notebook should be able to understand all of your data preparation and modeling decisions.
+
+### GitHub Repository
+
+The GitHub repository should also be very similar to the Phase 3 repository.
+
+The main additional element to consider is **reproducibility**, since many of the dataset options are too large to be saved directly in a GitHub repository. Make sure you include clear instructions for how someone would reproduce your modeling process, potentially including any scripts you used to organize data into directories.
+
+## Grading
+
+***To pass this project, you must pass each rubric objective.*** The project rubric objectives for Phase 4 are:
+
+1. Attention to Detail
+2. Advanced ML Communication
+3. Advanced Data Preparation
+4. Advanced ML Modeling
+
+### Attention to Detail
+
+Once again, the Attention to Detail standard has increased. ***In Phase 4, you need to complete 90% (9 out of 10) or more of the checklist elements in order to pass the Attention to Detail objective.***
+
+**NOTE THAT THE PASSING BAR IS HIGHER IN PHASE 4 THAN IT WAS IN PHASE 3!**
+
+#### Exceeds Objective
+
+100% of the project checklist items are complete
+
+#### Meets Objective (Passing Bar)
+
+90% of the project checklist items are complete
+
+#### Approaching Objective
+
+80% of the project checklist items are complete
+
+#### Does Not Meet Objective
+
+70% or fewer of the project checklist items are complete
+
+### Advanced ML Communication
+
+Once again, you are expected to communicate the results of an ML modeling process. Just like in Phase 3, we are looking for *rationale, results, limitations, and recommendations.*
+
+In Phase 4, the emphasis is on the **Jupyter Notebook**. The notebook should include a **summary** at the beginning that briefly and accurately describes your process. The summary should be approximately 250 words -- about the size of a research paper abstract.
+
+Summary elements:
+
+* Business and data understanding: *what kind of data are you using, and what makes it well-suited for the business problem?*
+  * You do not need to include any data visualizations in your summary, but consider including relevant descriptive statistics
+* Data preparation: *why did you choose the data preparation steps that you did, and what was the result?*
+  * This should be specific to the kind of data you are working with. For example, if you are doing an NLP project, what did you decide to do with stopwords?
+  * Be sure to list the packages/libraries used to prepare the data, and why
+* Modeling: *what modeling package(s) did you use, which model(s) within the package(s), and what tuning steps did you take?*
+  * For some projects there may be only one applicable package; you should still briefly explain why this was the appropriate choice
+  * For neural networks projects, be sure to describe your model architecture choices
+* Evaluation: *how well did your final model perform?*
+  * Include one or more relevant metrics
+  * Be sure to briefly describe your validation approach
+
+#### Exceeds Objective
+
+Communicates advanced modeling summary as well as a narrative throughout the notebook text that demonstrates mastery of an advanced topic
+
+> Decisions should be justified and outcomes evaluated in Markdown throughout the notebook
+
+#### Meets Objective (Passing Bar)
+
+Successfully communicates a summary of an advanced modeling technique including business and data understanding, data preparation, modeling, and evaluation
+
+> It is possible to meet this bar with just a summary and not a narrative throughout the notebook, so long as the steps taken are justifiable and free of major errors. See the Approaching Objective section for an explanation of what a "major error" means.
+
+#### Approaching Objective
+
+Communicates advanced modeling summary with at least one major error
+
+> A major error means that one of the required elements of the summary was missing, or some aspect of the communication was fundamentally incorrect. For example, if you stated that you performed "deep learning" when you actually used `CountVectorizer` and `MultinomialNB` from scikit-learn, that would be a major error. Another example would be if you described a regression task as a classification task, or if you described supervised learning as unsupervised learning.
+
+#### Does Not Meet Objective
+
+Does not communicate advanced modeling summary
+
+> Markdown headings and occasional narrative text throughout the notebook are not sufficient in this phase, even if they were in previous phases. You need to include a summary at the beginning of your notebook.
+
+### Advanced Data Preparation
+
+Once again, this objective is very similar to Phase 3, although the complexity has increased.
+
+#### Exceeds Objective
+
+Goes above and beyond with data preparation, such as feature engineering, using pipelines, or using unsupervised techniques
+
+> Supervised learning is the core of this project, but feel free to use unsupervised techniques for data analysis or preparation
+
+#### Meets Objective (Passing Bar)
+
+Successfully prepares data for modeling, using at least one Python package other than scikit-learn
+
+> Your final model does not need to use anything other than scikit-learn, but you should explore other tools during your modeling process
+
+#### Approaching Objective
+
+Prepares some data successfully, but has at least one major error
+
+#### Does Not Meet Objective
+
+Does not prepare data for modeling
+
+### Advanced ML Modeling
+
+This is your real opportunity to flex those new Phase 4 skills!
+
+#### Exceeds Objective
+
+Goes above and beyond in the modeling process, such as using models from multiple different packages or model explainability tools
+
+> You are encouraged but not required to use models from multiple different packages. The feasibility of this depends on your choice of project. For time series, this might mean trying both StatsModels and Prophet. For image classification, this might mean using TensorFlow with and without transfer learning.
+
+> See [this book chapter](https://christophm.github.io/interpretable-ml-book/lime.html) for an introduction to LIME for model explainability
+
+#### Meets Objective (Passing Bar)
+
+Successfully builds and evaluates multiple models using an appropriate model validation technique
+
+> As noted previously, the `train_test_split` from scikit-learn may or may not be appropriate for your modeling task. Be sure to investigate appropriate techniques so you are confident in the performance of your final model on unseen data
+
+#### Approaching Objective
+
+Builds multiple models with at least one major error
+
+#### Does Not Meet Objective
+
+Does not build multiple models
 
 ## Getting Started
 
-Create a new repository for your project to get started. We recommend structuring your project repository similar to the structure in [the Phase 1 Project Template](https://github.com/learn-co-curriculum/dsc-project-template). You can do this either by creating a new fork of that repository to work in or by building a new repository from scratch that mimics that structure.
+Please start by reviewing the contents of this project description. If you have any questions, please ask your instructor ASAP.
 
-## Project Submission and Review
+Next, select a dataset and a business problem. Recall that more information is available in [Phase 4 Project - Choosing a Dataset](https://github.com/learn-co-curriculum/dsc-phase-4-choosing-a-dataset).
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic to learn how to submit your project and how it will be reviewed. Your project must pass review for you to progress to the next Phase.
+To get started with project development, create a new repository on GitHub. For this project, we recommend that you do not fork the template repository, but rather that you make a new repository from scratch, starting by going to [github.com/new](https://github.com/new).
 
 ## Summary
 
