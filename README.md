@@ -54,7 +54,7 @@ In the following step, English stopwords were imported and a function was create
 In order to get a better sense of the data, now that the words have been tokenized and stop words have been removed, the following code is used to visualize the distribution of words within each available artist's lyrics. From the respective charts, it can be observed that there are still some commonalities amongst top words for each artist, even after stopwords have been removed. If these pose an issue, they can be removed in later iterations of modeling in order to improve performance, but for now, “i’m” and “like” are removed.
 
 
-![view](https://github.com/n0vah917/dsc-phase-3-project-v2-3/blob/main/images/1.png)
+![view](https://github.com/n0vah917/dsc-phase-4-project-v2-3/blob/main/images/1.png)
 
 
 It is blatantly evident that within the rap artists (Drake, Eminem, and Post Malone), curse words are far more prevalent in their lyrics, while none are present in the pop songs. Within the pop songs, “love” seems to be a common word, taking a top 10 slot across all artists.
@@ -76,7 +76,7 @@ In order to initialize modeling, the data is split into train and testing groups
 
 In order to further prep the data, a count vectorizer is initialized. Vectorizers are necessary for this process, as it provides a way to convert text data, currently in the form of lists, into a form that a model can understand. The Count Vectorizer is a rudimentary vectorizer, which solely counts the presence of a word in any given document. The min_df is specified as 30, an arbitrary number for our baseline model. The min_df value of 30 implies that all words in the vectorizer need to be in the document base at least 30 times. Similarly, the max_df is specified as 1000, which implies that words are only considered as identifiers for the model if they appear in less than 1000 distinct documents. Words that appear too frequently across the base are not desirable, as their inclusion may decrease resulting performance.
 
-![view](https://github.com/n0vah917/dsc-phase-3-project-v2-3/blob/main/images/2.png)
+![view](https://github.com/n0vah917/dsc-phase-4-project-v2-3/blob/main/images/2.png)
 
 Below, a Multinomial Naive Bayes model is instantiated for our model to be fit on, and the plotted confusion matrix helps visualize how well the model did. The MultinomialNB model is essential for text classification, as it involves using conditional probability across the different categorizations, and is generally good for classifying on distinct features.
 
@@ -90,7 +90,7 @@ Pop in True label, Pop in Predicted label - True Positive
 
 Pop in True label, Rap in Predicted label - False Negative
 
-![view](https://github.com/n0vah917/dsc-phase-3-project-v2-3/blob/main/images/3.png)
+![view](https://github.com/n0vah917/dsc-phase-4-project-v2-3/blob/main/images/3.png)
 
 Below, results of the first model can be seen through the classification report. The classification report outputs 3 metrics of critical importance: precision, recall, accuracy, and f1 score. These main metrics help understand how well the model performed in terms of classifying each song genre as a rap/pop.
 
@@ -120,7 +120,7 @@ As seen through the slightly improved recall scores within both the test data an
 
 
 
-![view](https://github.com/n0vah917/dsc-phase-3-project-v2-3/blob/main/images/4.png)
+![view](https://github.com/n0vah917/dsc-phase-4-project-v2-3/blob/main/images/4.png)
 
 
 
